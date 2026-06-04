@@ -10,8 +10,9 @@ jobs:
         run: 
           echo "Testing GitHub Actions."
       - name: Multi-line
-        run: 
+        run: |
           echo "Try other stuff."
+          echo "Testing stuff 🚀🚀🚀"
           echo "Now we are talking 🚀🚀🚀"
         
       
