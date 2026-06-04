@@ -11,6 +11,7 @@ jobs:
       - name: First Push
         run: |
           echo "Testing push trigger in GA😎"
+          echo "Xup, ${{ vars.my_name }}!"
   
   trial:
     runs-on: ubuntu-latest
