@@ -1,10 +1,10 @@
 # This is a basic workflow to help you get started with Actions
-name: Learn
-on: 
+name: Learn # name is Learn
+on: # how it executes; manually here
   workflow_dispatch:
-jobs:
+jobs:  # job name: test 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest     # where it is executed; os it runs on
     steps:
       - name: First test
         run: 
@@ -14,6 +14,23 @@ jobs:
           echo "Try other stuff."
           echo "Testing stuff 🚀🚀🚀"
           echo "Now we are talking 🚀🚀🚀"
+  trial:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create directories
+        run: 
+          mkdir test
+      - name: cd into it
+        run:           
+          cd test
+      - name: Create file
+        run:
+          touch test/t.txt
+      - name: Finally
+        run: |
+          echo "I'm in $PWD."
+          echo "I created directories."
+          
         
       
     
