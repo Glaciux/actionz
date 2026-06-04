@@ -21,10 +21,11 @@ jobs:  # job name: test
         run: |
           mkdir test
           cd test     
-          touch test/t.txt     
-          echo "I'm in $PWD."
+          touch t.txt b.sh     
+          echo "I'm in $PWD." > b.sh
+          cat b.sh
           echo "I created directories."
-          
+          ls -la
         
       
     
