@@ -15,6 +15,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+      - name: Copy index.html to S3 bucket
+        run: |
+          aws s3 sync ./ s3://arn:aws:s3:::nox-s3-ga/ \
+          --exclude "*" \
+          --include "index.html"
+          
 
           
       # - name: Checkout the code
