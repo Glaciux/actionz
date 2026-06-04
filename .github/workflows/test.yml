@@ -7,10 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First test
-        run: echo "Testing GitHub Actions"
+        run: 
+          echo "Testing GitHub Actions."
       - name: Multi-line
-        run: echo "Try other stuff",
-             echo "Now we are talking 🚀🚀🚀"
+        run: 
+          echo "Try other stuff."
+          echo "Now we are talking 🚀🚀🚀"
         
       
     
