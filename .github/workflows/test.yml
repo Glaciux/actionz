@@ -6,26 +6,32 @@ jobs:
   test-push:
     runs-on: 
       ubuntu-latest
-    needs: trial
     steps:
-      - name: First Push
-        run: |
-          echo "Testing push trigger in GA😎"
-          echo "Xup, ${{ vars.TEST_NAME }}!"
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Print index.html
+        run: cat index.html
+      
+  #   needs: trial
+  #   steps:
+  #     - name: First Push
+  #       run: |
+  #         echo "Testing push trigger in GA😎"
+  #         echo "Xup, ${{ vars.TEST_NAME }}!"
   
-  trial:
-    runs-on: ubuntu-latest
+  # trial:
+  #   runs-on: ubuntu-latest
     
-    steps:
-      - name: Create directories
-        run: |
-          mkdir test
-          cd test     
-          touch t.txt b.sh     
-          echo "I'm in $PWD." > b.sh
-          cat b.sh
-          echo "I created directories."
-          ls -la
+  #   steps:
+  #     - name: Create directories
+  #       run: |
+  #         mkdir test
+  #         cd test     
+  #         touch t.txt b.sh     
+  #         echo "I'm in $PWD." > b.sh
+  #         cat b.sh
+  #         echo "I created directories."
+  #         ls -la
 
 # jobs:  # job name: test 
 #   test:
