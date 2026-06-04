@@ -1,16 +1,26 @@
 # This is a basic workflow to help you get started with Actions
-name: Git-tinz # name is Learn
+name: Deploy Static from S3 # name is Learn
 on: # how it executes; manually here
   push:
 jobs: 
-  test-push:
+  deploy:
     runs-on: 
       ubuntu-latest
     steps:
-      - name: Checkout the code
+      - name: Checkout code from the repo
         uses: actions/checkout@v4
-      - name: Print index.html
-        run: cat index.html
+      - name: Configure AWS credentials to interact with S3 
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key-id: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+          
+      # - name: Checkout the code
+      #   uses: actions/checkout@v4
+      # - name: Print index.html
+      #   run: cat index.html
       
   #   needs: trial
   #   steps:
