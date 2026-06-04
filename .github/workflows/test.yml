@@ -18,16 +18,10 @@ jobs:  # job name: test
     runs-on: ubuntu-latest
     steps:
       - name: Create directories
-        run: 
-          mkdir test
-      - name: cd into it
-        run:           
-          cd test
-      - name: Create file
-        run:
-          touch test/t.txt
-      - name: Finally
         run: |
+          mkdir test
+          cd test     
+          touch test/t.txt     
           echo "I'm in $PWD."
           echo "I created directories."
           
