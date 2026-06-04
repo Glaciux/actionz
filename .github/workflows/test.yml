@@ -1,33 +1,42 @@
 # This is a basic workflow to help you get started with Actions
-name: Learn # name is Learn
+name: Git-tinz # name is Learn
 on: # how it executes; manually here
-  workflow_dispatch:
-jobs:  # job name: test 
-  test:
-    runs-on: ubuntu-latest   # where it is executed; os it runs on
-    needs: trial # runs after the trial job completes
+  push:
+jobs: 
+  test-push:
+    runs-on: 
+      ubuntu-latest
     steps:
-      - name: First test
-        run: 
-          echo "Testing GitHub Actions."
-      - name: Multi-line
+      - name: First Push
         run: |
-          echo "Try other stuff."
-          echo "Testing stuff 🚀🚀🚀"
-          echo "Ran trial prior to this"
-          echo "Now we are talking 🚀🚀🚀"
-  trial:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create directories
-        run: |
-          mkdir test
-          cd test     
-          touch t.txt b.sh     
-          echo "I'm in $PWD." > b.sh
-          cat b.sh
-          echo "I created directories."
-          ls -la
+          echo "Testing push trigger in GA😎"
+
+# jobs:  # job name: test 
+#   test:
+#     runs-on: ubuntu-latest   # where it is executed; os it runs on
+#     # needs: trial # runs after the trial job completes
+#     steps:
+#       - name: First test
+#         run: 
+#           echo "Testing GitHub Actions."
+#       - name: Multi-line
+#         run: |
+#           echo "Try other stuff."
+#           echo "Testing stuff 🚀🚀🚀"
+#           echo "Ran trial prior to this"
+#           echo "Now we are talking 🚀🚀🚀"
+  # trial:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Create directories
+  #       run: |
+  #         mkdir test
+  #         cd test     
+  #         touch t.txt b.sh     
+  #         echo "I'm in $PWD." > b.sh
+  #         cat b.sh
+  #         echo "I created directories."
+  #         ls -la
         
       
     
