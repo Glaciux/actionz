@@ -36,7 +36,7 @@ jobs:
           # 2. Tell Amplify to grab the index.html straight from your S3 bucket link
           aws amplify start-deployment \
             --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-            --branch-name main \
+            --branch-name staging \
             --job-id $JOB_ID \
             --source-url s3://ga-s3-nox/index.html
        
