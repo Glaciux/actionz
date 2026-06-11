@@ -3,11 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Art of Anime Presentation</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --accent-color: #45f3ff;
+            --text-main: #c5c6c7;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow: hidden;
+            background-linear: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+        }
+
+        /* Slide Container Setup */
+        .slide-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Typography & Content Layouts */
+        h1 {
+            font-size: 4rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 span {
+            color: var(--accent-color);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            align-self: flex-start;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .slide-content {
+            display: flex;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1200px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Grid Cards for Presentation Items */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            border-left: 5px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        /* Navigation Controls Overlay */
+        .controls {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        button {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            border: 2px solid var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Wassup Nox!😎😎😎</h1>
-    <h2>Wassup Nox!😎😎😎</h2>
-    <h3>Wassup Nox!😎😎😎</h3>
+
+    <div class="slide-container">
+        
+        <div class="slide active">
+            <h1>The Evolution of <span>Anime</span></h1>
+            <p>Exploring the history, cultural impact, and global artistic phenomena of Japanese animation.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Major Target Demographics</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Shonen</h3>
+                    <p style="text-align: left; font-size: 1.1rem;">Targeted at young males. Features action, high stakes, and themes of camaraderie. Examples: Naruto, Jujutsu Kaisen.</p>
+                </div>
+                <div class="card">
+                    <h3>Shojo</h3>
+                    <p style="text-align: left; font-size: 1.1rem;">Targeted at young females. Focuses heavily on personal relationships, romance, and emotional growth. Examples: Fruits Basket, Nana.</p>
+                </div>
+                <div class="card">
+                    <h3>Seinen</h3>
+                    <p style="text-align: left; font-size: 1.1rem;">Targeted at adult audiences. Explores deeper psychological, philosophical, and complex narrative themes. Examples: Berserk, Vinland Saga.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>A Global Cultural Phenomenon</h2>
+            <div class="slide-content">
+                <p style="text-align: left; max-width: 600px;">
+                    What began as a localized artistic style in Japan has evolved into a multi-billion dollar international industry. Through stream platforms, community conventions, and cinematic masterpieces, anime influences global fashion, music, design, and digital storytelling frameworks.
+                </p>
+                <div style="background-color: var(--card-bg); padding: 3rem; border-radius: 8px; text-align: center; border: 1px dashed var(--accent-color);">
+                    <h4 style="color: var(--text-light); font-size: 2rem;">40%+</h4>
+                    <p style="font-size: 1rem;">Of the global animation market share is driven by Japanese properties.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Thank <span>You</span></h1>
+            <p>Questions & Discussion</p>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+
+        <div class="instructions">
+            Use Left/Right arrow keys or click the buttons to navigate.
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+        // Keyboard Event Handling
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                showSlide(currentSlide - 1);
+            }
+        });
+    </script>
 </body>
 </html>
