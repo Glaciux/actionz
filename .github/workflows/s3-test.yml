@@ -27,11 +27,11 @@ jobs:
       - name: Tell Amplify to Deploy From S3 Source
         run: |
           # 1. Safety Check: Stop any stuck or hanging jobs on this branch
-          echo "Checking for hanging deployments..."
-          aws amplify stop-job \
+          echo "Instructing Amplify to sync directly with the S3 bucket source..."
+          aws amplify update-branch \
             --app-id ${{ secrets.AMPLIFY_APP_ID }} \
             --branch-name staging \
-            --job-id 3 || echo "Job 3 already stopped or cleared."
+            --source-url s3://ga-s3-nox/index.html
 
           # 2. Generate a fresh manual deployment token slot
           echo "Creating new deployment slot..."
