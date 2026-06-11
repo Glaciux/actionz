@@ -1,3 +1,28 @@
+# New Static file test
+name: Deploy a Static file in S3
+on:
+ push
+jobs:
+  build:
+    runs-on:
+      ubuntu-22.04
+    steps:
+      - name: Checkout code from repo
+        uses: actions/checkout@v4
+      - name: Configure AWS Creds
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Code static website
+        run: |
+          aws s3 sync ./ s3://ga-s3-nox \
+          --exclude "*" \
+          --include "index.html"
+          
+
+
 # # This is a basic workflow to help you get started with Actions
 # name: Deploy Static from S3 # name is Learn
 # on: # how it executes; manually here
